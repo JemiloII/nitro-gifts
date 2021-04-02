@@ -1,94 +1,42 @@
 <template>
   <section class="section">
     <div class="container">
-      <button v-if="!revealed" class="button is-success is-large" type="button" @click.prevent="reveal()">Human Check</button>
-      <div v-if="revealed" class="title is-size-2 has-text-weight-semibold">
-        <span class="has-text-white">Click on:</span>
-        <span class="has-text-danger is-capitalized">{{waifu}}</span>
+      <div class="title is-size-2 has-text-weight-semibold">
+        <span class="has-text-white">Shibiko's:</span>
+        <span class="has-text-danger is-capitalized">Nitro Gifts</span>
       </div>
 
-      <button v-if="revealed" @click="isWaifu(character)" v-for="(character, index) in characters" :key="index">
-        <img
-          width="100"
-          height="100"
-          :src="`/captcha/${character}.png`"
-          :alt="character"
-        >
-      </button>
+      <article class="article">
+        <p class="p">
+          What is this site for? Well the site is created by, Shibiko#1337, inorder to combat discord nitro sniping bots.
+          I was really frustrated when I was just trying to give out nitros for fun and they were being instantly taken
+          by bot. The speeds are so in human, I just knew. So I made this nice site so you all can have a glorious chance
+          to win the nitros. All I ask is that if you win a nitro, to at share the news.
+        </p>
+        <p class="p">
+          Currently, my nitro gift site is Genshin Impact themed because I'm part of a rather large discord server. If you
+          don't like it, well I can only help you by respecting your opinion. However, I'll still think its awesome and I
+          am looking for more ways to improve it. All feedback, good and bad are welcomed. I wish you the best in winning
+          some nitros~
+        </p>
+      </article>
     </div>
   </section>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        prize: 'Z79xNjdkkAPVSFeN',
-        waifu: '',
-        revealed: false,
-        characters: [
-          'barbara',
-          'diona',
-          'klee',
-          'xiangling'
-        ],
-        player: {
-          play() {}
-        }
-      }
-    },
-    methods: {
-      selectWaifu() {
-        const index = Math.floor(Math.random() * 3);
-        this.waifu = this.characters[index];
-      },
-      isWaifu(character) {
-        this.player.play();
-        if (this.revealed) {
-          if (this.waifu === character) {
-            return this.$router.push({path: `/claim/${this.prize}`});
-          }
-          return this.$router.push({path: `/miss-clicked`});
-        }
-      },
-      reveal() {
-        this.player.play();
-        this.revealed = !this.revealed;
-      },
-      shuffle(array) {
-        let currentIndex = array.length, temporaryValue, randomIndex;
-
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
-          // Pick a remaining element...
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
-
-          // And swap it with the current element.
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
-        }
-
-        return array;
-      }
-    },
-    mounted() {
-      this.characters = this.shuffle(this.characters);
-      this.selectWaifu();
-      // this.player = document.querySelector('.player');
-    }
-  }
-</script>
-
 <style scoped>
-  button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
+  .container {
+    margin-top: 20vh;
+    background: rgba(0, 0, 0, .8);
   }
 
-  .button {
-    vertical-align: bottom;
+  .article {
+    padding: 0 2.5em;
+    color: white;
+  }
+
+  .p {
+    text-align: justify;
+    padding-bottom: 8px;
   }
 </style>
