@@ -8,16 +8,15 @@
 
       <article class="article">
         <p class="p">
-          What is this site for? Well the site is created by, Shibiko#1337, inorder to combat discord nitro sniping bots.
-          I was really frustrated when I was just trying to give out nitros for fun and they were being instantly taken
-          by bot. The speeds are so in human, I just knew. So I made this nice site so you all can have a glorious chance
-          to win the nitros. All I ask is that if you win a nitro, to at share the news.
+          This site is created by Shibiko#1337 inorder to combat discord nitro sniping bots. He became quite frustrated
+          while giving out nitros for fun, just to learn that they were being instantly taken by bots. So this site will
+          give you all a glorious chance to win the nitros. All he asks is that if you win a nitro, share the good news.
         </p>
         <p class="p">
-          Currently, my nitro gift site is Genshin Impact themed because I'm part of a rather large discord server. If you
-          don't like it, well I can only help you by respecting your opinion. However, I'll still think its awesome and I
-          am looking for more ways to improve it. All feedback, good and bad are welcomed. I wish you the best in winning
-          some nitros~
+          Currently, the nitro gift site is Genshin Impact themed because Shibiko is part of a rather large discord
+          server. If you don't like it, well we can only help by respecting your opinion. However, we still think it's
+          awesome and are always looking for more ways to improve it. All feedback, good and bad are welcomed. We wish
+          you the best luck in winning some nitros~
         </p>
       </article>
     </div>
