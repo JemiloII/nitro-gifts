@@ -29,18 +29,13 @@
       };
     },
     async asyncData({ route }) {
-      console.log('route', route)
-
-      const response = await fetch(`https://nitro.shibiko.io/nitro/${route.params.code}`)
-        .then(res => {
-          console.log('res', res)
-          res.json()
-        });
-
-      console.log('response', response);
+      const {
+        nitro = 'ZqyKmQFba8NhC2D9'
+      } = await fetch(`https://nitro.shibiko.io/nitro/${route.params.code}`)
+            .then(res => res.json());
 
       return {
-        nitro: 'ZqyKmQFba8NhC2D9',
+        nitro,
         waifu: '',
         revealed: false,
         characters: [

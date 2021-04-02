@@ -16,6 +16,7 @@ export default {
 
   serverMiddleware: [
     { path: '/code', handler: '~/server-middleware/validate-code.js' },
+    { path: '/claim/nitro', handler: '~/server-middleware/update-nitro-code.js' },
     { path: '/insert/nitro', handler: '~/server-middleware/post-nitro-code.js' },
     { path: '/nitro', handler: '~/server-middleware/get-nitro-code.js' }
   ],

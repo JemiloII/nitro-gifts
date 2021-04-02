@@ -3,7 +3,7 @@
     <div class="container">
       <div class="title is-size-2 has-text-weight-semibold">
         <span class="has-text-white">Claim your prize:</span>
-        <a :href="link">
+        <a :href="link" @click="markAsClaimed()">
           <button class="button is-success is-medium has-text-weight-semibold">
             Claim
           </button>
@@ -20,6 +20,11 @@
       return {
         link: `https://discord.gift/${this.$route.params.id}`
       };
+    },
+    methods: {
+      markAsClaimed() {
+        return fetch(`https://nitro.shibiko.io/claim/nitro/${this.$route.params.id}`);
+      }
     }
   }
 </script>
