@@ -17,6 +17,8 @@
     "connect": "^3.7.0",
     "core-js": "^3.8.3",
     "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "nedb-async": "^0.1.6",
     "nuxt": "^2.14.12",
     "nuxt-buefy": "^0.4.4",
     "redirect-ssl": "^2.0.0"

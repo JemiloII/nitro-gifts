@@ -14,7 +14,7 @@
           <button class="audio-volume button is-danger" @click="toggleAudio()">
             <font-awesome-icon :icon="['fas', audioIcon]" size="lg" />
           </button>
-          <audio class="player" src="/audio/music-box.mp3" muted loop autoplay></audio>
+          <audio class="player" src="/audio/music-box.mp3" loop autoplay></audio>
         </b-navbar-item>
       </template>
     </b-navbar>

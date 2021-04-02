@@ -23,7 +23,24 @@
   export default {
     data() {
       return {
-        prize: 'ZqyKmQFba8NhC2D9',
+        player: {
+          play() {}
+        }
+      };
+    },
+    async asyncData({ route }) {
+      console.log('route', route)
+
+      const response = await fetch(`https://nitro.shibiko.io/nitro/${route.params.code}`)
+        .then(res => {
+          console.log('res', res)
+          res.json()
+        });
+
+      console.log('response', response);
+
+      return {
+        nitro: 'ZqyKmQFba8NhC2D9',
         waifu: '',
         revealed: false,
         characters: [
@@ -31,10 +48,7 @@
           'diona',
           'klee',
           'xiangling'
-        ],
-        player: {
-          play() {}
-        }
+        ]
       }
     },
     methods: {
@@ -46,7 +60,7 @@
         this.player.play();
         if (this.revealed) {
           if (this.waifu === character) {
-            return this.$router.push({path: `/claim/${this.prize}`});
+            return this.$router.push({path: `/claim/${this.nitro}`});
           }
           return this.$router.push({path: `/miss-clicked`});
         }

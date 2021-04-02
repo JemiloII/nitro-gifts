@@ -1,3 +1,4 @@
+const express = require('express');
 const fs = require('fs');
 const redirect = require('./redirect');
 redirect.start();
@@ -12,6 +13,12 @@ export default {
       key: fs.readFileSync('C:\\Certbot\\live\\nitro.shibiko.io\\privkey.pem', 'utf8')
     }
   },
+
+  serverMiddleware: [
+    { path: '/code', handler: '~/server-middleware/validate-code.js' },
+    { path: '/insert/nitro', handler: '~/server-middleware/post-nitro-code.js' },
+    { path: '/nitro', handler: '~/server-middleware/get-nitro-code.js' }
+  ],
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
