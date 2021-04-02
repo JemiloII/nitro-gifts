@@ -49,8 +49,8 @@
           this.audioIcon = 'volume-up';
           this.player.volume = 0.075;
           localStorage.setItem('isMuted', 'false');
+          this.player.play();
         }
-        this.player.play();
       }
     },
     mounted() {
